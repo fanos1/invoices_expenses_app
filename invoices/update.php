@@ -17,6 +17,7 @@ exit();
 
 $sourceUrl = $path_parts['filename'];
 
+exit('invoice UPDAT not ready yet, cik');
 
 try {
 	 // include __DIR__ . '/../../../DatabaseConnectionManager.php';
@@ -49,7 +50,7 @@ try {
 			*/
 
 			// $sql = "DELETE FROM ".$table_name. " WHERE id = :id";			
-			$sql = "DELETE FROM tax_codes WHERE id = :id";
+			$sql = "DELETE FROM invoices WHERE id = :id";
 			$stmt = $pdo->prepare($sql);
 			// $stmt->bindValue(':id', $GET['id']);
 			$stmt->bindParam(':id', $id);

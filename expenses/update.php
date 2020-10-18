@@ -17,6 +17,7 @@ exit();
 
 $sourceUrl = $path_parts['filename'];
 
+exit('UPDAT e script not ready yet');
 
 try {
 	 // include __DIR__ . '/../../../DatabaseConnectionManager.php';
@@ -49,7 +50,7 @@ try {
 			*/
 
 			// $sql = "DELETE FROM ".$table_name. " WHERE id = :id";			
-			$sql = "DELETE FROM tax_codes WHERE id = :id";
+			$sql = "DELETE FROM expenses WHERE id = :id";
 			$stmt = $pdo->prepare($sql);
 			// $stmt->bindValue(':id', $GET['id']);
 			$stmt->bindParam(':id', $id);

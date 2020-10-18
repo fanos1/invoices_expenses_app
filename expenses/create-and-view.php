@@ -117,7 +117,7 @@ try
 
 				// Move the file to its proper folder but add _tmp, just in case:
 				$dest =  $PDFS_DIR .$new_name;
-				$attach = date("Y-m-d") .'_'. $new_name;
+				// $attach = date("Y-m-d") .'_'. $new_name;
 
 				if (move_uploaded_file($file['tmp_name'], $dest)) {
 		
@@ -176,7 +176,7 @@ try
             $stmt->bindParam(':amount', $amount);
             $stmt->bindParam(':expen_type', $expen_type);
             $stmt->bindParam(':proj_id', $proj_id);
-            $stmt->bindParam(':attach', $attach);
+            $stmt->bindParam(':attach', $dest);
             $stmt->bindParam(':description', $description);
             $stmt->bindParam(':expen_date', $expen_date);            
             $stmt->execute();

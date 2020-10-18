@@ -49,7 +49,7 @@ try {
 			*/
 
 			// $sql = "DELETE FROM ".$table_name. " WHERE id = :id";			
-			$sql = "DELETE FROM tax_codes WHERE id = :id";
+			$sql = "DELETE FROM invoices WHERE id = :id";
 			$stmt = $pdo->prepare($sql);
 			// $stmt->bindValue(':id', $GET['id']);
 			$stmt->bindParam(':id', $id);

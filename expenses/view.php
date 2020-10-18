@@ -36,7 +36,8 @@ try {
 			*/
 			
 			// $sql = 'SELECT * FROM `invoices` WHERE `id` = :d';
-			$sql = "SELECT exp.id, exp.amount, exp.expen_type, exp.proj_id, exp.attachment, exp.description, exp.expen_date, 
+			$sql = "SELECT exp.id, exp.amount, exp.attachment, 
+			exp.expen_type, exp.proj_id, exp.attachment, exp.description, exp.expen_date, 
 			etype.name AS expenseType, p.name as projName
 			FROM expenses AS exp
 			INNER JOIN expen_types AS etype ON etype.id = exp.expen_type
@@ -63,6 +64,7 @@ try {
 				$custom_vat = '';
 				$tot = 0;
 				
+				// $tr .= "<td>". $rows['attachment'] ."</td>";
 				foreach ($R  as $key => $rows) {
 					// echo "<h3>". $rows['amount'] ."</h3>";
 					$tr .= "<td>". $rows['id'] ."</td>";
@@ -73,6 +75,9 @@ try {
 					$tr .= "<td>". $rows['description'] ."</td>";
 					$tr .= "<td>". $rows['expen_date'] ."</td>";
 					$tr .= "<td>". $rows['projName'] ."</td>";
+					
+					$tr .= '<td><a href="'.$rows['attachment'].'">'. $rows['attachment'] .'</a>
+					</td>';
 
 					$exp_no = $rows['id'];
 					//$custom_city = $rows['city'];
@@ -122,7 +127,6 @@ $formToken1 = $_SESSION['formtoken1'];
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <style type="text/css">
     	body {
-		    background: grey;
 		    margin-top: 120px;
 		    margin-bottom: 120px;
 		}
@@ -146,6 +150,7 @@ $formToken1 = $_SESSION['formtoken1'];
 					<th>Descrip</th>
 					<th>exp date</th>
 					<th>Proj name</th>
+					<th>pdf</th>
 				</thead>
 				<tbody>
 					<?php echo $tr; ?>

@@ -29,7 +29,7 @@ try {
 			$tr .= 
 			'<tr> 
 				<td>
-					<a href="./update.php?id='.$value['id'].'">'.$value['id'].' - Update </a> 
+					<a href="./update.php?id='.$value['id'].'">'.$value['id'].' </a> 
 				</td> 										
 				<td>'. $value['amount'] / 100 . '</td>
 				<td>'. $value['expen_type']. '</td>
